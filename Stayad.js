@@ -1,7 +1,18 @@
 
+
 var body=$response.body;
-body = body.replace(/imageUrl\":".*?"/g,'imageUrl":"null"');
-body = body.replace(/jumpUrl\":".*?"/g,'jumpUrl":"null"');
-body = body.replace(/subtitle_cn\":".*?"/g,'subtitle_cn":""');
-body = body.replace(/title_cn\":".*?"/g,'title_cn":""');
+var url = $request.url;
+var obj = JSON.parse(body);
+
+const Zoo = '/stay-fork/browse/featured'
+
+if (url.indexOf(Zoo) != -1) {
+     obj.blocks.imageUrl ="null";
+    obj.blocks.jumpUrl ="null";
+    obj.blocks.subtitle_cn ="null";
+      obj.blocks.title_cn ="null";
+ 
+body = JSON.stringify(obj);
+}
+
 $done(body);
