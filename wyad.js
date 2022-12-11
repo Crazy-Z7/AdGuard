@@ -1,1 +1,10 @@
-var body = $response.body.replace(/result":\d/g, 'result":0'); $done({body});
+
+var ojbk = JSON.parse($response.body);
+   
+    ojbk = {
+  "result": 0,
+  "ads": [],
+  "store": ""
+}
+
+$done({body : JSON.stringify(ojbk)});
