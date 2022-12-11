@@ -4,11 +4,11 @@ var body=$response.body;
 
       var ojbk = JSON.parse(body);
 
-   const Zoo = '/getAppList.xhtml'
+   const zooad = '/getAppList.xhtml'
 
-if (url.indexOf(Zoo) != -1) {
-     ojbk.app.image ="null";
-    ojbk.app.content ="null";
+if (url.indexOf(zooad) != -1) {
+     ojbk.ad.image ="null";
+    ojbk.adli.content ="null";
 
  
      body = JSON.stringify(ojbk);
