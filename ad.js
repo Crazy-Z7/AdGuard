@@ -1,6 +1,6 @@
 var ojbk = JSON.parse($response.body);
    
-    ojbk = {null}
+    ojbk = {}
 
 $done({body : JSON.stringify(ojbk)});
 
