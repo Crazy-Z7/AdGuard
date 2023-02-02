@@ -5,7 +5,7 @@ let item = [
   "adli", //搜索页推荐广告
   "ad", //精选页顶部广告
   "spappli", //大家都爱用 
-  "tmpOrderIndex", //应用顶部广告
+  "bannerMenuItem", //应用顶部广告
 ];
 if (obj) {
   item.forEach((i) => {
