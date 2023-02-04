@@ -10,8 +10,7 @@ let item = [
 ];
 if (obj) {
   item.forEach((i) => {
-    delete obj[i];
-  });
+delete obj[i];
+});
 }
-
 $done({ body: JSON.stringify(obj) });
