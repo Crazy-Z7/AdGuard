@@ -1,6 +1,5 @@
 
 
-if (!$response.body) $done({});
 let obj = JSON.parse($response.body);
 
 let item = [
