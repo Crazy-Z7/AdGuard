@@ -1,1 +1,37 @@
+/**********************************************
+作者:Zoo
+芒果tv净化，去除视屏开头广告，视屏播放页广告，我的，会员，首页各种页面广告
+日期:2023.05.29
+[rewrite_local]
+https://me.bz.mgtv.com/v3/module/list url script-response-body https://raw.githubusercontent.com/Crazy-Z7/Scrip/main/Noadmgtv.snippet
+^https?:\/\/vip\.bz\.mgtv\.com\/client\/dynamic_entry.+ url reject-200
+https://video.da.mgtv.com url reject-dict
+https://pcvideoaliyun.titan.mgtv.com url reject-dict
+https://mobile.da.mgtv.com/app/el url reject-200
+https://mobile.da.mgtv.com/m/page url reject-200
+https://playgift.api.mgtv.com/play/gift/api/play/config url reject-200
+https://layer.bz.mgtv.com/layer/conf.* url reject-dict
+https://layer.bz.mgtv.com/layer/report url reject-200
+https://mobile.da.mgtv.com/creative/list url reject-dict
+https://mobile.da.mgtv.com/json/app/bdboot url reject-200
+https://img.da.mgtv.com/mediafiles/wiad_creative/1008/*.gif url reject-img
+https://layer.bz.mgtv.com/layer/confv2 url reject-200
+https://credits.bz.mgtv.com/credits/selectedToast url reject-dict
+http://dflow.bz.mgtv.com/flow/getExtensionPosition url reject-200
+https://me2.bz.mgtv.com/v3/module/list.+ url reject-dict
+https://vipcdn.mgtv.com/act_ugc/billing/20220825/tmp/acf2efcc245911edbe6e00163e308875.png url reject-img
+http://iphone.v0.mgtv.com/show.php?abroad.+ url reject-200
+https://mob.bz.mgtv.com/odin/c1/skin/config url reject-200
+https://mob.bz.mgtv.com/odin/c1/channel/ads url reject-200
+https://credits.bz.mgtv.com/credits/url url reject-200
+^https?:\/\/recom\.api\.mgtv\.com\/xyt\/banner.+ url reject-200
+hostname = vipcdn.mgtv.com, pcvideoaliyun.titan.mgtv.com, h5.mgtv.com, *.da.mgtv.com, *.bz.mgtv.com
+**********************************************/
+
+const Zoomgtv1 = "/v3/module/list";
+if ($request.url.indexOf(Zoomgtv1) != -1){
+let Zoomgtv1 = JSON.parse(body);
+delete.Zoomgtv1.data ;
+body = JSON.stringify(Zoomgtv1);}
+$done({body});
 
