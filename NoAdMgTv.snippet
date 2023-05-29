@@ -3,7 +3,7 @@
 芒果tv净化，去除视屏开头广告，视屏播放页广告，我的，会员，首页各种页面广告
 日期:2023.05.29
 [rewrite_local]
-https://me.bz.mgtv.com/v3/module/list url script-response-body https://raw.githubusercontent.com/Crazy-Z7/AdGuard/main/NoAdMgTv.snippet
+https://me.bz.mgtv.com/v3/module/list url reject-200
 https://dc.bz.mgtv.com/dynamic/v1/channel/vrsList url response-body .+ response-body {}
 ^https?:\/\/vip\.bz\.mgtv\.com\/client\/dynamic_entry.+ url reject-200
 https://video.da.mgtv.com url reject-dict
@@ -28,108 +28,3 @@ https://credits.bz.mgtv.com/credits/url url reject-200
 ^https?:\/\/recom\.api\.mgtv\.com\/xyt\/banner.+ url reject-200
 hostname = vipcdn.mgtv.com, pcvideoaliyun.titan.mgtv.com, h5.mgtv.com, *.da.mgtv.com, *.bz.mgtv.com
 **********************************************/
-
-let Zoomgtv = JSON.parse($response.body);
-
-Zoomgtv = {
-   "code" : 200,
-   "data" : {
-     "reviewState" : 0,
-     "list" : [
-       {
-         "data" : [
-           {
-             "id" : 10,
-             "subStyle" : {
- 
-             },
-             "subTitle" : "",
-             "imageB" : "",
-             "moduleType" : 10,
-             "popStyle" : {
- 
-             },
-             "popTitle" : "",
-             "title" : "扫一扫",
-             "image" : "https://ugc.hitv.com/platform_oss/96B12AC9D32E44FDA2F01BE188BB5C21.png",
-             "requestUrl" : "",
-             "rpt" : "id=10&pid=1&title=扫一扫",
-             "jumpUrl" : "imgotv://sscan",
-             "pid" : 1,
-             "imageD" : "",
-             "isPop" : 0
-           },
-           {
-             "id" : 12,
-             "subStyle" : {
- 
-             },
-             "subTitle" : "",
-             "imageB" : "",
-             "moduleType" : 18,
-             "popStyle" : {
- 
-             },
-             "popTitle" : "",
-             "title" : "消息",
-             "image" : "https://ugc.hitv.com/platform_oss/CE91967590D6437B997C2EBB8C7FC2D7.png",
-             "requestUrl" : "",
-             "rpt" : "id=12&pid=1&title=消息",
-             "jumpUrl" : "imgotv://smessage",
-             "pid" : 1,
-             "imageD" : "",
-             "isPop" : 0
-           },
-           {
-             "id" : 11,
-             "subStyle" : {
- 
-             },
-             "subTitle" : "",
-             "imageB" : "",
-             "moduleType" : 10,
-             "popStyle" : {
- 
-             },
-             "popTitle" : "",
-             "title" : "搜索",
-             "image" : "https://ugc.hitv.com/platform_oss/D8C1F312C895412FB04261E6684EFCD4.png",
-             "requestUrl" : "",
-             "rpt" : "id=11&pid=1&title=搜索",
-             "jumpUrl" : "imgotv://search?keyword=",
-             "pid" : 1,
-             "imageD" : "",
-             "isPop" : 0
-           },
-           {
-             "id" : 13,
-             "subStyle" : {
- 
-             },
-             "subTitle" : "",
-             "imageB" : "",
-             "moduleType" : 10,
-             "popStyle" : {
- 
-             },
-             "popTitle" : "",
-             "title" : "设置",
-             "image" : "https://ugc.hitv.com/platform_oss/132DA3A6B6B94AC891E9611DD4AE9900.png",
-             "requestUrl" : "",
-             "rpt" : "id=13&pid=1&title=设置",
-             "jumpUrl" : "imgotv://ssetings",
-             "pid" : 1,
-             "imageD" : "",
-             "isPop" : 0
-           }
-         ],
-         "id" : 1,
-         "subTitle" : "",
-         "moduleType" : 1,
-         "title" : "顶部模块"
-       },
-       "msg" : "success",
-   "seqId" : "53ecfc5e727c49f1a59173bd8f3446e2"
- }
-
-$done({body : JSON.stringify(Zoomgtv)});
