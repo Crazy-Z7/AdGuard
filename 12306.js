@@ -1,6 +1,14 @@
-var ojbk = JSON.parse($response.body);
-   
-    ojbk = {
+/**********************************************
+作者:Zoo
+12306去开屏广告倒计时去首页顶部广告
+日期:2023.05.30
+[rewrite_local]
+^https?:\/\/ad\.12306\.cn\/ad\/ser\/getAdList url script-response-body https://raw.githubusercontent.com/Crazy-Z7/AdGuard/main/12306.js
+hostname = ad.12306.cn
+**********************************************/
+let Zoo12306Ad = JSON.parse($response.body);
+
+    Zoo12306Ad = {
   "code": "00",
   "materialsList": [{
     "billId": "3427",
@@ -59,5 +67,5 @@ var ojbk = JSON.parse($response.body);
   }
 }
 
-$done({body : JSON.stringify(ojbk)});
+$done({body : JSON.stringify(Zoo12306Ad)});
 
