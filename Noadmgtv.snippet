@@ -28,10 +28,11 @@ https://credits.bz.mgtv.com/credits/url url reject-200
 hostname = vipcdn.mgtv.com, pcvideoaliyun.titan.mgtv.com, h5.mgtv.com, *.da.mgtv.com, *.bz.mgtv.com
 **********************************************/
 
-let obj=JSON.parse($response.body);
 
-delete obj.data ;
-$done({body: JSON.stringify(obj)});
+const Zoomgtv1 = "/v3/module/list";
 
-
+if ($request.url.indexOf(Zoomgtv1) != -1){
+let Zoomgtv1 = JSON.parse(body);
+delete.Zoomgtv1.data ;
+body = JSON.stringify(Zoomgtv1);}
 
